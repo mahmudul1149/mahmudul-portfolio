@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Mahmudul Islam - Frontend Developer</title>
     <link rel="stylesheet" href="/scss/main.css" />
-    <!-- Add Three.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
   <body>
-    <!-- Add canvas for Three.js -->
     <canvas id="bg"></canvas>
 
     <header>
@@ -28,9 +26,10 @@
       <section id="home">
         <h1>Mahmudul Islam</h1>
         <h2 class="subtitle">Frontend Developer</h2>
+        <div class="role">Currently @ Connekt Studio</div>
         <div class="intro-text">
-          <p>Building beautiful, responsive, and user-friendly web experiences with modern technologies.</p>
-          <p>Specialized in React, JavaScript, and modern frontend frameworks.</p>
+          <p>A passionate frontend developer with 2 years of experience in building modern web applications using Vue.js, Nuxt 3, and other cutting-edge technologies.</p>
+          <p>Specialized in creating scalable and user-friendly web experiences with modern tech stack.</p>
         </div>
         <div class="cta-buttons">
           <a href="#projects" class="primary-btn">View My Work</a>
@@ -39,51 +38,93 @@
       </section>
 
       <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
+        <div class="about-content">
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>As a frontend developer at Connekt Studio, I've been crafting exceptional web experiences for the past 2 years. My expertise includes HTML5, CSS3, SCSS, Vue.js, Nuxt 3, and Vuetify, complemented by working knowledge of Node.js and MongoDB.</p>
+            <p>I specialize in building scalable frontend solutions and have contributed to various AI-powered platforms, demonstrating my ability to work with cutting-edge technologies.</p>
+          </div>
+          <div class="tech-stack">
+            <h3>Technologies I Work With</h3>
+            <ul class="skills-list">
+              <li>Vue.js</li>
+              <li>Nuxt 3</li>
+              <li>Vuetify</li>
+              <li>HTML5</li>
+              <li>CSS3/SCSS</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section id="projects">
-        <h2>My Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="project-grid">
           <article class="project-card">
-            <h3>Project 1</h3>
-            <p>Project description goes here.</p>
+            <h3>Vocalo.ai</h3>
+            <p>An English speaking practice platform leveraging LLM, OpenAI, AST, and STT technologies to enhance English speaking skills.</p>
+            <div class="tech-stack">
+              <span>LLM</span>
+              <span>OpenAI</span>
+              <span>TTS</span>
+              <span>STT</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="visit-link">Visit Site</a>
+              <a href="#" class="details-link">View Details</a>
+            </div>
           </article>
+
           <article class="project-card">
-            <h3>Project 2</h3>
-            <p>Project description goes here.</p>
+            <h3>SketchToImage</h3>
+            <p>A cutting-edge platform that transforms sketches into high-quality images using advanced Diffusion Model technology.</p>
+            <div class="tech-stack">
+              <span>Vue.js</span>
+              <span>Diffusion Model</span>
+              <span>AI</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>AiStoryGen</h3>
+            <p>AI-powered story writing platform that generates multimedia content including text, images, video, and audio.</p>
+            <div class="tech-stack">
+              <span>LLM</span>
+              <span>Diffusion</span>
+              <span>Synthetix</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>QuizMakerAI</h3>
+            <p>An AI-powered quiz creation platform with automatic evaluation and grading capabilities.</p>
+            <div class="tech-stack">
+              <span>LLM</span>
+              <span>OpenAI</span>
+              <span>SaaS</span>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <!-- Add more skills -->
-        </ul>
-      </section>
-
       <section id="contact">
-        <h2>Contact Me</h2>
+        <h2>Get In Touch</h2>
         <form>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" required></textarea>
-          <button type="submit">Send Message</button>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="primary-btn">Send Message</button>
         </form>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2024 Your Name. All rights reserved.</p>
+      <p>&copy; 2024 Mahmudul Islam. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
-    <!-- Add background.js -->
     <script src="js/background.js"></script>
   </body>
 </html>
