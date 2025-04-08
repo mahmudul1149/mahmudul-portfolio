@@ -198,11 +198,51 @@ form button:hover {
 #home {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   padding: 4rem 10% 0;
-  margin-top: -2rem;
+  margin-top: -4rem;
+  gap: 4rem;
+}
+#home .content-wrapper {
+  flex: 1;
+  max-width: 600px;
+}
+#home .hero-image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+}
+#home .hero-image::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(100, 255, 218, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+#home .hero-image:hover::after {
+  transform: scale(1.1);
+  border-color: rgba(100, 255, 218, 0.5);
+}
+#home .hero-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid rgba(100, 255, 218, 0.2);
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+#home .hero-image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
 }
 #home h1 {
   font-size: 3.5rem;
@@ -397,9 +437,218 @@ form button:hover {
   border-radius: 20px;
 }
 
+#about #contact {
+  padding: 6rem 0;
+  text-align: center;
+}
+#about #contact h2 {
+  font-size: 2.5rem;
+  color: #ccd6f6;
+  margin-bottom: 1.5rem;
+}
+#about #contact .contact-intro {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #8892b0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+#about #contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+#about #contact .contact-grid .contact-item {
+  background: rgba(17, 34, 64, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+}
+#about #contact .contact-grid .contact-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(100, 255, 218, 0.2);
+  background: rgba(17, 34, 64, 0.7);
+}
+#about #contact .contact-grid .contact-item .icon {
+  font-size: 2rem;
+  color: #64ffda;
+  margin-bottom: 1rem;
+}
+#about #contact .contact-grid .contact-item h3 {
+  color: #ccd6f6;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+#about #contact .contact-grid .contact-item p {
+  color: #8892b0;
+  font-size: 1rem;
+}
+#about #contact .contact-grid .contact-item a {
+  color: #64ffda;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#about #contact .contact-grid .contact-item a:hover {
+  color: #97ffe6;
+}
+#about form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(17, 34, 64, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+#about form .form-group {
+  margin-bottom: 1.5rem;
+}
+#about form .form-group label {
+  display: block;
+  color: #ccd6f6;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+#about form .form-group input, #about form .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(10, 25, 47, 0.5);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 8px;
+  color: #ccd6f6;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+#about form .form-group input:focus, #about form .form-group textarea:focus {
+  outline: none;
+  border-color: rgba(100, 255, 218, 0.3);
+  background: rgba(10, 25, 47, 0.7);
+}
+#about form .form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+#about form button {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#about form button:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+}
+
+#about {
+  padding: 6rem 0;
+}
+#about .about-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+#about .about-content .about-text h2 {
+  font-size: 2.5rem;
+  color: #ccd6f6;
+  margin-bottom: 2rem;
+}
+#about .about-content .about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+#about .about-content .experience-highlights {
+  background: rgba(17, 34, 64, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+#about .about-content .experience-highlights h3 {
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+#about .about-content .experience-highlights .highlight-item {
+  margin-bottom: 2rem;
+}
+#about .about-content .experience-highlights .highlight-item .project-title {
+  color: #ccd6f6;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+#about .about-content .experience-highlights .highlight-item .project-desc {
+  color: #8892b0;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+#about .about-content .experience-highlights .highlight-item .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+#about .about-content .experience-highlights .highlight-item .tech-stack span {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border-radius: 20px;
+}
+
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.cta-buttons a {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.cta-buttons a.primary-cta {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+}
+.cta-buttons a.primary-cta:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.15);
+}
+.cta-buttons a.secondary-cta {
+  background: transparent;
+  color: #ccd6f6;
+  border: 1px solid rgba(204, 214, 246, 0.2);
+}
+.cta-buttons a.secondary-cta:hover {
+  border-color: #64ffda;
+  color: #64ffda;
+  transform: translateY(-2px);
+}
+.cta-buttons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+.cta-buttons a:hover::before {
+  left: 100%;
 }
 
 header nav ul li a {
