@@ -19,9 +19,8 @@ canvas {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.9;
   pointer-events: none;
-  background: linear-gradient(to bottom, #0a192f, #112240);
 }
 
 header {
@@ -81,9 +80,10 @@ section:hover {
   padding: 0 1rem;
 }
 .project-grid .project-card {
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  font-size: 4rem;
+  background: linear-gradient(90deg, #ffffff, #ccd6f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 2.5rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -92,6 +92,11 @@ section:hover {
   gap: 1.5rem;
   position: relative;
   overflow: hidden;
+  background: rgba(17, 34, 64, 0.5);
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: #ccd6f6;
+  transition: all 0.3s ease;
 }
 .project-grid .project-card::before {
   content: "";
@@ -111,16 +116,15 @@ section:hover {
 .project-grid .project-card:hover {
   transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(2, 6, 23, 0.85);
+  background: linear-gradient(135deg, rgba(17, 34, 64, 0.9) 0%, rgba(10, 25, 47, 0.8) 100%);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 .project-grid .project-card:hover::after {
   opacity: 1;
 }
 .project-grid .project-card h3 {
   font-size: 1.75rem;
-  background: linear-gradient(90deg, #fff, #ccd6f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ccd6f6;
   margin-bottom: 0.5rem;
 }
 .project-grid .project-card p {
@@ -228,6 +232,115 @@ form button:hover {
   line-height: 1.8;
 }
 
+#about #contact {
+  padding: 6rem 0;
+  text-align: center;
+}
+#about #contact h2 {
+  font-size: 2.5rem;
+  color: #ccd6f6;
+  margin-bottom: 1.5rem;
+}
+#about #contact .contact-intro {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #8892b0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+#about #contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+#about #contact .contact-grid .contact-item {
+  background: rgba(17, 34, 64, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+}
+#about #contact .contact-grid .contact-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(100, 255, 218, 0.2);
+  background: rgba(17, 34, 64, 0.7);
+}
+#about #contact .contact-grid .contact-item .icon {
+  font-size: 2rem;
+  color: #64ffda;
+  margin-bottom: 1rem;
+}
+#about #contact .contact-grid .contact-item h3 {
+  color: #ccd6f6;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+#about #contact .contact-grid .contact-item p {
+  color: #8892b0;
+  font-size: 1rem;
+}
+#about #contact .contact-grid .contact-item a {
+  color: #64ffda;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#about #contact .contact-grid .contact-item a:hover {
+  color: #97ffe6;
+}
+#about form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(17, 34, 64, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+#about form .form-group {
+  margin-bottom: 1.5rem;
+}
+#about form .form-group label {
+  display: block;
+  color: #ccd6f6;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+#about form .form-group input, #about form .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(10, 25, 47, 0.5);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 8px;
+  color: #ccd6f6;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+#about form .form-group input:focus, #about form .form-group textarea:focus {
+  outline: none;
+  border-color: rgba(100, 255, 218, 0.3);
+  background: rgba(10, 25, 47, 0.7);
+}
+#about form .form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+#about form button {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#about form button:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+}
+
 #about {
   padding: 6rem 0;
 }
@@ -291,13 +404,15 @@ form button:hover {
 
 header nav ul li a {
   color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 header nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .primary-btn, .secondary-btn {

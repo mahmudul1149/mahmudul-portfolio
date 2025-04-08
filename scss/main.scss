@@ -39,9 +39,8 @@ canvas {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.9;
   pointer-events: none;
-  background: linear-gradient(to bottom, $bg-dark, $bg-darker);
 }
 
 // Header
@@ -109,9 +108,10 @@ section {
   padding: 0 1rem;
 
   .project-card {
-    background: rgba(2, 6, 23, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    font-size: 4rem;
+    background: linear-gradient(90deg, #ffffff, $text-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding: 2.5rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -148,10 +148,21 @@ section {
       transition: opacity 0.3s ease;
     }
 
+    background: rgba($bg-darker, 0.5);
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: $text-primary;
+    transition: all 0.3s ease;
+
     &:hover {
       transform: translateY(-5px);
       border-color: rgba(255, 255, 255, 0.15);
-      background: rgba(2, 6, 23, 0.85);
+      background: linear-gradient(
+        135deg,
+        rgba($bg-darker, 0.9) 0%,
+        rgba($bg-dark, 0.8) 100%
+      );
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
       
       &::after {
         opacity: 1;
@@ -160,9 +171,7 @@ section {
 
     h3 {
       font-size: 1.75rem;
-      background: linear-gradient(90deg, #fff, #ccd6f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: $text-primary;
       margin-bottom: 0.5rem;
     }
 
@@ -284,6 +293,136 @@ form {
 }
 
 #about {
+  // Contact Section
+  #contact {
+    padding: 6rem 0;
+    text-align: center;
+    
+    h2 {
+      font-size: 2.5rem;
+      color: $text-primary;
+      margin-bottom: 1.5rem;
+    }
+  
+    .contact-intro {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: $text-secondary;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+  
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+  
+      .contact-item {
+        background: rgba($bg-darker, 0.5);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba($primary-color, 0.1);
+        transition: all 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          border-color: rgba($primary-color, 0.2);
+          background: rgba($bg-darker, 0.7);
+        }
+  
+        .icon {
+          font-size: 2rem;
+          color: $primary-color;
+          margin-bottom: 1rem;
+        }
+  
+        h3 {
+          color: $text-primary;
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        p {
+          color: $text-secondary;
+          font-size: 1rem;
+        }
+  
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: lighten($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba($bg-darker, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        color: $text-primary;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 1rem;
+        background: rgba($bg-dark, 0.5);
+        border: 1px solid rgba($primary-color, 0.1);
+        border-radius: 8px;
+        color: $text-primary;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: rgba($primary-color, 0.3);
+          background: rgba($bg-dark, 0.7);
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      background: rgba($primary-color, 0.1);
+      color: $primary-color;
+      border: 1px solid rgba($primary-color, 0.2);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($primary-color, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+#about {
   padding: 6rem 0;
   
   .about-content {
@@ -357,19 +496,21 @@ form {
   gap: 1.5rem;
 }
 
+// Header navigation
 header {
   nav {
     ul {
       li {
         a {
           color: #e2e8f0;
-          background: rgba(255, 255, 255, 0.05);
+          background: transparent;
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 8px;
+          backdrop-filter: blur(8px);
 
           &:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
           }
         }
       }
