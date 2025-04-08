@@ -1,0 +1,231 @@
+$primary-color: #64ffda;
+$bg-dark: #0a192f;
+$bg-darker: #112240;
+$text-primary: #ccd6f6;
+$text-secondary: #8892b0;
+
+// Mixins
+@mixin glass-effect {
+  backdrop-filter: blur(8px);
+  background: rgba($bg-dark, 0.1);
+}
+
+@mixin hover-lift {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: $bg-dark;
+  color: $text-secondary;
+  overflow-x: hidden;
+}
+
+// Canvas
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.7;
+  pointer-events: none;
+  background: linear-gradient(to bottom, $bg-dark, $bg-darker);
+}
+
+// Header
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  border-bottom: 1px solid rgba($primary-color, 0.1);
+
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+
+      li {
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          padding: 0.5rem 1rem;
+
+          &:hover {
+            background: rgba($primary-color, 0.1);
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main content
+main {
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 2rem auto;
+  padding: 3rem;
+  @include hover-lift;
+}
+
+// Projects
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+
+  .project-card {
+    background: rgba($bg-darker, 0.9);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba($primary-color, 0.1);
+    @include hover-lift;
+
+    &:hover {
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      border-color: $primary-color;
+    }
+  }
+}
+
+// Skills
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+
+  li {
+    padding: 0.5rem 1rem;
+    background: rgba($primary-color, 0.1);
+    color: $primary-color;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+}
+
+// Contact form
+form {
+  max-width: 600px;
+  margin: 0 auto;
+
+  input, textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba($bg-darker, 0.9);
+    border: 1px solid rgba($primary-color, 0.1);
+    border-radius: 4px;
+    color: $text-primary;
+  }
+
+  button {
+    background: transparent;
+    color: $primary-color;
+    padding: 1rem 2rem;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    cursor: pointer;
+    @include hover-lift;
+
+    &:hover {
+      background: rgba($primary-color, 0.1);
+    }
+  }
+}
+
+// Home section
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10%;
+
+  h1 {
+    font-size: 3rem;
+    color: $text-primary;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .intro-text {
+    max-width: 600px;
+    margin-bottom: 3rem;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// CTA Buttons
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  @include hover-lift;
+}
+
+.primary-btn {
+  background: $primary-color;
+  color: $bg-dark;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+.secondary-btn {
+  border: 2px solid $primary-color;
+  color: $primary-color;
+
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+}
+
+// Footer
+footer {
+  background: rgba($bg-dark, 0.9);
+  color: $text-secondary;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
