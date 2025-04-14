@@ -166,15 +166,21 @@
 
         </div>
       </section>
-
+      <div id="formMessage" class="form-message">
+        <h3>Thank You!</h3>
+        <p>Your message has been sent successfully. I'll get back to you soon!</p>
+        <button onclick="closeMessage()">Close</button>
+      </div>
       <section id="contact">
         <h2>Get In Touch</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit" class="primary-btn">Send Message</button>
-        </form>
+        <div class="contact-wrapper">
+          <form id="contactForm" action="https://formspree.io/f/mvgkleqz" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="primary-btn">Send Message</button>
+          </form>
+        </div>
       </section>
     </main>
 
@@ -184,6 +190,7 @@
 
     <script src="script.js"></script>
     <script src="js/background.js"></script>
-        <script src="js/nav.js"></script>
-      </body>
-    </html>
+    <script src="js/nav.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
