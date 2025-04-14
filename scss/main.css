@@ -429,117 +429,6 @@ form button:hover {
   line-height: 1.8;
 }
 
-#about #contact {
-  padding: 6rem 0;
-  text-align: center;
-}
-#about #contact h2 {
-  font-size: 2.5rem;
-  color: #ccd6f6;
-  margin-bottom: 1.5rem;
-}
-#about #contact .contact-intro {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  color: #8892b0;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-#about #contact .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-#about #contact .contact-grid .contact-item {
-  background: rgba(17, 34, 64, 0.5);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(100, 255, 218, 0.1);
-  transition: all 0.3s ease;
-}
-#about #contact .contact-grid .contact-item:hover {
-  transform: translateY(-5px);
-  border-color: rgba(100, 255, 218, 0.2);
-  background: rgba(17, 34, 64, 0.7);
-}
-#about #contact .contact-grid .contact-item .icon {
-  font-size: 2rem;
-  color: #64ffda;
-  margin-bottom: 1rem;
-}
-#about #contact .contact-grid .contact-item h3 {
-  color: #ccd6f6;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-#about #contact .contact-grid .contact-item p {
-  color: #8892b0;
-  font-size: 1rem;
-}
-#about #contact .contact-grid .contact-item a {
-  color: #64ffda;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-#about #contact .contact-grid .contact-item a:hover {
-  color: #97ffe6;
-}
-#about form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: rgba(17, 34, 64, 0.5);
-  border-radius: 12px;
-  border: 1px solid rgba(100, 255, 218, 0.1);
-}
-#about form .form-group {
-  margin-bottom: 1.5rem;
-}
-#about form .form-group label {
-  display: block;
-  color: #ccd6f6;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-#about form .form-group input,
-#about form .form-group textarea {
-  width: 100%;
-  padding: 1rem;
-  background: rgba(10, 25, 47, 0.5);
-  border: 1px solid rgba(100, 255, 218, 0.1);
-  border-radius: 8px;
-  color: #ccd6f6;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-#about form .form-group input:focus,
-#about form .form-group textarea:focus {
-  outline: none;
-  border-color: rgba(100, 255, 218, 0.3);
-  background: rgba(10, 25, 47, 0.7);
-}
-#about form .form-group textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-#about form button {
-  width: 100%;
-  padding: 1rem;
-  background: rgba(100, 255, 218, 0.1);
-  color: #64ffda;
-  border: 1px solid rgba(100, 255, 218, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#about form button:hover {
-  background: rgba(100, 255, 218, 0.2);
-  transform: translateY(-2px);
-}
-
 #about {
   padding: 6rem 0;
 }
@@ -596,63 +485,64 @@ form button:hover {
   border-radius: 20px;
 }
 
-#about #contact {
+#contact {
   padding: 6rem 0;
   text-align: center;
 }
-#about #contact h2 {
+#contact h2 {
   font-size: 2.5rem;
   color: #ccd6f6;
   margin-bottom: 1.5rem;
 }
-#about #contact .contact-intro {
+#contact .contact-intro {
   max-width: 600px;
   margin: 0 auto 3rem;
   color: #8892b0;
   font-size: 1.1rem;
   line-height: 1.8;
 }
-#about #contact .contact-grid {
+#contact .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
-#about #contact .contact-grid .contact-item {
+#contact .contact-grid .contact-item {
   background: rgba(17, 34, 64, 0.5);
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid rgba(100, 255, 218, 0.1);
   transition: all 0.3s ease;
 }
-#about #contact .contact-grid .contact-item:hover {
+#contact .contact-grid .contact-item:hover {
   transform: translateY(-5px);
   border-color: rgba(100, 255, 218, 0.2);
   background: rgba(17, 34, 64, 0.7);
 }
-#about #contact .contact-grid .contact-item .icon {
+#contact .contact-grid .contact-item .icon {
   font-size: 2rem;
   color: #64ffda;
   margin-bottom: 1rem;
 }
-#about #contact .contact-grid .contact-item h3 {
+#contact .contact-grid .contact-item h3 {
   color: #ccd6f6;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-#about #contact .contact-grid .contact-item p {
+#contact .contact-grid .contact-item p {
   color: #8892b0;
   font-size: 1rem;
 }
-#about #contact .contact-grid .contact-item a {
+#contact .contact-grid .contact-item a {
   color: #64ffda;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-#about #contact .contact-grid .contact-item a:hover {
+#contact .contact-grid .contact-item a:hover {
   color: #97ffe6;
 }
-#about form {
+
+form {
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
@@ -660,17 +550,17 @@ form button:hover {
   border-radius: 12px;
   border: 1px solid rgba(100, 255, 218, 0.1);
 }
-#about form .form-group {
+form .form-group {
   margin-bottom: 1.5rem;
 }
-#about form .form-group label {
+form .form-group label {
   display: block;
   color: #ccd6f6;
   margin-bottom: 0.5rem;
   text-align: left;
 }
-#about form .form-group input,
-#about form .form-group textarea {
+form .form-group input,
+form .form-group textarea {
   width: 100%;
   padding: 1rem;
   background: rgba(10, 25, 47, 0.5);
@@ -680,17 +570,17 @@ form button:hover {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-#about form .form-group input:focus,
-#about form .form-group textarea:focus {
+form .form-group input:focus,
+form .form-group textarea:focus {
   outline: none;
   border-color: rgba(100, 255, 218, 0.3);
   background: rgba(10, 25, 47, 0.7);
 }
-#about form .form-group textarea {
+form .form-group textarea {
   min-height: 150px;
   resize: vertical;
 }
-#about form button {
+form button {
   width: 100%;
   padding: 1rem;
   background: rgba(100, 255, 218, 0.1);
@@ -702,7 +592,7 @@ form button:hover {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-#about form button:hover {
+form button:hover {
   background: rgba(100, 255, 218, 0.2);
   transform: translateY(-2px);
 }
@@ -900,6 +790,7 @@ footer {
     padding: 2rem 5% 0;
     text-align: center;
     gap: 2rem;
+    margin-top: 1rem;
   }
   #home .content-wrapper {
     max-width: 100%;
@@ -1022,7 +913,7 @@ header nav .hamburger.active span:nth-child(3) {
     right: 0;
   }
   header nav .nav-links li {
-    margin: 1.5rem 0;
+    margin: 0.8rem 0;
   }
   header nav .nav-links li a {
     font-size: 1.2rem;
