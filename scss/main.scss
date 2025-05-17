@@ -229,29 +229,42 @@ section {
     color: $text-primary;
     margin-bottom: 3rem;
     text-align: center;
+    position: relative;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, transparent);
+      border-radius: 2px;
+    }
   }
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 1rem;
+  margin-top: 2rem;
 
   .project-card {
-    font-size: 4rem;
-    background: linear-gradient(90deg, #ffffff, $text-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 2.5rem;
+    background: rgba($bg-darker, 0.5);
+    color: $text-primary;
+    padding: 1rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     position: relative;
     overflow: hidden;
-
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    
     // Gradient overlay
     &::before {
       content: "";
@@ -272,46 +285,60 @@ section {
       inset: 0;
       background: radial-gradient(
         circle at 50% 0%,
-        rgba(255, 255, 255, 0.1),
+        rgba($primary-color, 0.08),
         transparent 70%
       );
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
       pointer-events: none;
     }
 
-    background: rgba($bg-darker, 0.5);
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    color: $text-primary;
-    transition: all 0.3s ease;
-
     &:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      border-color: rgba($primary-color, 0.2);
       background: linear-gradient(
         135deg,
         rgba($bg-darker, 0.9) 0%,
         rgba($bg-dark, 0.8) 100%
       );
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
 
       &::after {
         opacity: 1;
       }
     }
 
-    // ... existing code ...
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      z-index: 1;
+    }
 
     h3 {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
-      // Default gradient (first project)
       background-image: linear-gradient(90deg, $primary-color, $text-primary);
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background: linear-gradient(90deg, $primary-color, transparent);
+        transition: width 0.3s ease;
+      }
+    }
+
+    &:hover h3::after {
+      width: 100%;
     }
 
     // Different gradients for each project card
@@ -331,56 +358,117 @@ section {
       background-image: linear-gradient(90deg, #fbbf24, #f87171);
     }
 
-    p {
-      color: #94a3b8;
-      font-size: 1.1rem;
+    p.project-description {
+      color: $text-secondary;
+      font-size: 1.05rem;
       line-height: 1.7;
+      margin-bottom: 1.5rem;
+     
     }
 
-    // ... existing code ...
+    // Project Tech Stack and Role styles
+    .project-tech-stack, .project-role {
 
-    .tech-stack {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-
-      span {
+      
+      h4 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+        color: $primary-color;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 2px;
+          background: $primary-color;
+          margin-right: 8px;
+          border-radius: 2px;
+        }
+      }
+      
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        list-style: none;
+        padding: 0;
+      }
+      
+      li {
         font-size: 0.85rem;
-        padding: 0.5rem 1.2rem;
-        background: rgba(255, 255, 255, 0.05);
-        color: #e2e8f0;
+        background: rgba($bg-dark, 0.4);
+        padding: 0.4rem 0.9rem;
         border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         transition: all 0.3s ease;
-
+        
         &:hover {
-          background: rgba(255, 255, 255, 0.1);
-          transform: translateY(-2px);
+          background: rgba($primary-color, 0.1);
+          border-color: rgba($primary-color, 0.3);
+          transform: translateY(-2px) scale(1.05);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
       }
     }
+    
+    .project-role {
+      margin-top: auto;
+      padding-top: 1.2rem;
+      
+      p {
+        font-size: 0.95rem;
+        margin: 0;
+        color: $text-secondary;
+        font-style: italic;
+      }
+    }
+
     .view-project {
       display: inline-flex;
       position: absolute;
       bottom: 20px;
       right: 20px;
       color: $text-primary;
-      transition: color 0.3s ease;
-      background: rgba($bg-darker, 0.6);
-      padding: 8px;
+      transition: all 0.3s ease;
+      background: rgba($bg-dark, 0.6);
+      padding: 10px;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       justify-content: center;
       align-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba($primary-color, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
 
       &:hover {
         color: $primary-color;
-        background: rgba($bg-darker, 0.8);
-        border-color: rgba($primary-color, 0.3);
-        transform: translateY(-2px);
+        background: rgba($bg-darker, 0.9);
+        border-color: rgba($primary-color, 0.4);
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 2px;
+        background: linear-gradient(135deg, $primary-color, transparent);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      &:hover::before {
+        opacity: 1;
       }
     }
 
@@ -393,6 +481,32 @@ section {
 
     .view-project:hover .view-icon {
       transform: scale(1.1);
+    }
+  }
+}
+
+// Media queries for project section
+@media screen and (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    .project-card {
+      
+      h3 {
+        font-size: 1.6rem;
+      }
+      
+      p.project-description {
+        font-size: 1rem;
+      }
+      
+      .view-project {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }
@@ -838,7 +952,7 @@ footer {
 
   .project-card {
     @include mobile {
-      padding: 3.2rem;
+      padding: 1rem;
     }
   }
 }
